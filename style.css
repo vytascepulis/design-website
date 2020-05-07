@@ -11,30 +11,51 @@ body {
     background: var(--light-color);
     height: 200vh;
 }
+h1 {
+    font-family: 'Lobster';
+    font-size: 5vw;
+    color: var(--text-color);
+}
 a {
     text-decoration: none;
     color: var(--light-color);
     padding: 10px 15px;
 }
-.btn {
+.btn-light {
     color: var(--text-color);
     font-family: 'Paytone One';
     background: var(--light-color);
     border-radius: 5px;
 }
-.btn-dark {
+.btn-light-hollow {
     font-family: 'Paytone One';
     color: var(--text-color);
     border: 3px solid var(--text-color);
     border-radius: 5px;
-    font-size: 2vw;
 }
-.btn-dark:hover {
+.btn-light-hollow:hover {
     color: var(--light-color);
     background: var(--text-color);
     border-radius: 5px;
 }
-a:hover {
+.btn-dark {
+    color: var(--light-color);
+    font-family: 'Paytone One';
+    background: var(--text-color);
+    border-radius: 5px;
+    border: 2px solid var(--text-color);
+}
+.btn-dark-hollow {
+    color: var(--light-color);
+    font-family: 'Paytone One';
+    border-radius: 5px;
+    border: 2px solid var(--light-color);
+}
+.btn-dark-hollow:hover {
+    color: var(--text-color);
+    background: var(--light-color);
+}
+.head-menu a:hover {
     color: var(--text-color);
     background: var(--light-color);
     border-radius: 5px;
@@ -104,8 +125,8 @@ a:hover {
     align-items: center;
     flex-direction: column;
     min-width: 300px;
-    /* background: lightgreen; */
 }
+
 #main .img {
     box-sizing: border-box;
     height: 100%;
@@ -113,7 +134,6 @@ a:hover {
 }
 .right {
     flex: 2 1;
-    /* background: lightpink; */
 }
 #about {
     display: flex;
@@ -126,6 +146,149 @@ a:hover {
     flex: 2 1;
     margin-left: 50px;
     text-align: left;
+}
+#services {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#services h1 {
+    margin-bottom: 7vh;
+}
+.cards {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    z-index: 1;
+}
+.cards p {
+    padding-bottom: 10px;
+}
+.card-light, .card-dark {
+    text-align: center;
+    flex: 0 1 220px;
+    font-family: 'Cambria';
+    line-height: 1.5em;
+    padding: 0 20px 30px 20px;
+    color: var(--text-color);
+    border-radius: 10px;
+}
+h2 {
+    font-size: 1.8em;
+    font-family: 'Paytone One';
+}
+.card-light {
+    background: var(--light-color);
+    border: 2px solid var(--text-color);
+}
+.card-dark {
+    background: rgb(67,0,126);
+    background: linear-gradient(0deg, rgba(67,0,126,1) 0%, rgba(136,41,219,1) 100%);
+    color: var(--light-color);
+}
+.cards .active {
+    transform: scale(1.2);
+}
+#team {
+    margin-top: -10vw;
+    position: relative;
+}
+.svg-top {
+    transform: rotate(180deg);
+}
+#team .content {
+    background: #8829DB;
+    color: var(--light-color);
+    margin-top: -10px;
+}
+#team .content h1 {
+    color: white;
+    margin: 0 0 20px 10%;
+}
+.inner {
+    width: calc(100vw - 50px); 
+    max-width: 1300px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 20px 30px 30px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.person {
+    flex: 0 0 200px;
+    min-height: 200px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.person img {
+    border-radius: 50%;
+    width: 150px;
+}
+.name {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+.person a {
+    padding: 0;
+    margin: 3px;
+    font-size: 1.6em;
+    color: rgba(255,255,255,0.7);
+}
+.person a:hover {
+    color: white;
+}
+#contact {
+    height: 50vh;
+    color: var(--light-color);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgba(0,0,0,0.6);
+    background-image: url('img/office-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: darken;
+    margin-top: -15%;
+    padding-top: 15%;
+}
+#contact h1 {
+    color: var(--light-color);
+    flex: 2;
+    text-align: center;
+}
+#contact .inner {
+    flex-wrap: nowrap;
+}
+#contact .form {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#contact .address {
+    flex: 0 0 280px;
+    color: white;
+}
+p.main {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+p.phone {
+    color: rgba(255,255,255,0.6);
+}
+input, textarea {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 8px;
+}
+textarea {
+    height: 90px;
 }
 
 @media only screen and (min-width: 1300px) {
