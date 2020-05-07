@@ -16,14 +16,37 @@ a {
     color: var(--light-color);
     padding: 10px 15px;
 }
+.btn {
+    color: var(--text-color);
+    font-family: 'Paytone One';
+    background: var(--light-color);
+    border-radius: 5px;
+}
+.btn-dark {
+    font-family: 'Paytone One';
+    color: var(--text-color);
+    border: 3px solid var(--text-color);
+    border-radius: 5px;
+    font-size: 2vw;
+}
+.btn-dark:hover {
+    color: var(--light-color);
+    background: var(--text-color);
+    border-radius: 5px;
+}
+a:hover {
+    color: var(--text-color);
+    background: var(--light-color);
+    border-radius: 5px;
+}
 #header {
     position: relative;
     width: 100%;
-    height: 20vw;
+    height: 15vw;
 }
 .head-svg {
     position: absolute;
-    top: 0;
+    top: -5vh;
     left: 0;
     z-index: 0;
 }
@@ -32,82 +55,81 @@ a {
     z-index: 1;
     width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-items: center;
-}
-.head-menu ul li {
-    display: inline-block;
-    margin-right: 5px;
 }
 .head-menu ul {
-    flex: 1;
-    text-align: right;
+    flex: 1 0 480px;
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: flex-end;
-    padding: 60px;
-    margin-right: 40px;
+    margin-right: 70px;
+    height: 50px;
     box-sizing: border-box;
+    list-style-type: none;
 }
-.active a {
-    color: var(--text-color);
-    background: var(--light-color);
-    border-radius: 5px;
-}
-a:hover {
-    color: var(--text-color);
-    background: var(--light-color);
-    border-radius: 5px;
+.head-menu li {
+    margin-right: 4px;
 }
 .head-logo {
-    margin: 40px;
+    margin: 20px;
     padding: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .head-logo img {
-    width: 120px;
-    transition: .2s ease-in-out transform;
-}
-.head-logo:hover img {
-    transform: scale(1.2);
+    width: 100px;
 }
 #main {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-direction: column;
+    width: calc(100vw - 50px);
+    max-width: 1300px;
+    margin: 0 auto;
 }
-#about {
-    flex: 1;
+#hero {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
-
-#about .left {
-    flex: 1;
-    flex-basis: 80px;
+.left {
+    flex: 1 0;
     font-family: 'Lobster';
-    font-size: 2.8vw;
+    font-size: 3vw;
     color: var(--text-color);
     display: flex;
     text-align: center;
     align-items: center;
     flex-direction: column;
+    min-width: 300px;
+    /* background: lightgreen; */
 }
-#about .btn {
-    font-family: 'Paytone One';
-    color: var(--text-color);
-    border: 3px solid var(--text-color);
-    border-radius: 5px;
-}
-#about .btn:hover {
-    color: var(--light-color);
-    /* border: 3px solid var(--text-color); */
-    background: var(--text-color);
-    border-radius: 5px;
-}
-#about .right img {
-    width: 60vw;
-    padding: 50px;
+#main .img {
     box-sizing: border-box;
+    height: 100%;
+    width: 100%; 
+}
+.right {
+    flex: 2 1;
+    /* background: lightpink; */
+}
+#about {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-top: 10vh;
+}
+#about .left {
+    font-family: 'Nothing You Could Do';
+    flex: 2 1;
+    margin-left: 50px;
+    text-align: left;
+}
+
+@media only screen and (min-width: 1300px) {
+    .head-svg {
+        top: -10vw;
+    }
 }
