@@ -13,7 +13,7 @@ body {
 }
 h1 {
     font-family: 'Lobster';
-    font-size: 5vw;
+    font-size: 4vw;
     color: var(--text-color);
 }
 a {
@@ -67,7 +67,7 @@ a {
 }
 .head-svg {
     position: absolute;
-    top: -5vh;
+    top: -10vw;
     left: 0;
     z-index: 0;
 }
@@ -115,10 +115,10 @@ a {
     flex-direction: row;
     align-items: center;
 }
-.left {
+#hero .left {
     flex: 1 0;
     font-family: 'Lobster';
-    font-size: 3vw;
+    font-size: 2.5vw;
     color: var(--text-color);
     display: flex;
     text-align: center;
@@ -159,6 +159,7 @@ a {
 .cards {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
     justify-content: space-evenly;
@@ -169,7 +170,7 @@ a {
 }
 .card-light, .card-dark {
     text-align: center;
-    flex: 0 1 220px;
+    flex: 0 0 220px;
     font-family: 'Cambria';
     line-height: 1.5em;
     padding: 0 20px 30px 20px;
@@ -203,6 +204,7 @@ h2 {
     background: #8829DB;
     color: var(--light-color);
     margin-top: -10px;
+    margin-bottom: -10px;
 }
 #team .content h1 {
     color: white;
@@ -221,10 +223,11 @@ h2 {
 .person {
     flex: 0 0 200px;
     min-height: 200px;
-    margin: 20px;
+    margin: 20px 20px 40px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: scale(1.2);
 }
 .person img {
     border-radius: 50%;
@@ -244,7 +247,6 @@ h2 {
     color: white;
 }
 #contact {
-    height: 50vh;
     color: var(--light-color);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background-color: rgba(0,0,0,0.6);
@@ -253,7 +255,7 @@ h2 {
     background-position: center center;
     background-blend-mode: darken;
     margin-top: -15%;
-    padding-top: 15%;
+    padding-top: 10%;
 }
 #contact h1 {
     color: var(--light-color);
@@ -270,8 +272,9 @@ h2 {
     justify-content: center;
 }
 #contact .address {
-    flex: 0 0 280px;
+    flex: 0 1 400px;
     color: white;
+    font-size: max(1.3vw, 1.2em);
 }
 p.main {
     font-size: 1.4em;
@@ -286,13 +289,102 @@ input, textarea {
     border-radius: 10px;
     border: none;
     margin-top: 8px;
+    font-size: max(1.3vw, 1.2em);
+    background: rgba(255,255,255,0.9)
 }
 textarea {
-    height: 90px;
+    height: 40%;
 }
 
-@media only screen and (min-width: 1300px) {
+@media only screen and (max-width: 1300px) {
     .head-svg {
-        top: -10vw;
+        top: -5vw;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .person {
+        transform: scale(1);
+    }
+    #contact .inner {
+        flex-direction: column;
+    }
+    #contact h1 {
+        order: 1;
+        font-size: 8vw;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    #contact .address {
+        order: 2;
+        flex-basis: 100%;
+        text-align: center;
+    }
+    #contact .form {
+        order: 3;
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+    textarea {
+        height: 90px;
+    }
+    .cards {
+        width: 300px;
+    }
+    .card-dark {
+        margin: 50px 0;
+        order: -1;
+    }
+    .card-light {
+        display: none;
+    }
+    h1 {
+        font-size: 6vw;
+    }
+    #about .left {
+        font-size: 3vw;
+    }
+}
+@media only screen and (max-width: 630px) {
+    .head-menu ul {
+        display: none;
+    }
+    #hero {
+        flex-direction: column;
+    }
+    .right {
+        order: -1;
+    }
+    .head-logo img {
+        width: 15vw;
+    }
+    #about {
+        flex-direction: column;
+    }
+    #about .right {
+        display: none;
+    }
+    #about .left {
+        font-size: 7vw;
+        text-align: center;
+        margin-left: 0;
+    }
+    #services {
+        margin-top: 40px;
+        font-size: .9em;
+    }
+    #services h1 {
+        display: none;
+    }
+    .cards .active {
+        transform: scale(1);
+    }
+    .cards {
+        margin: -40px;
+    }
+    #contact h1, #team h1 {
+        font-size: 3em;
+    }
+    #hero .left, .left h1 {
+        font-size: 1.5em;
     }
 }
